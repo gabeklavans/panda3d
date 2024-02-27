@@ -160,7 +160,6 @@ OpenALAudioManager() {
 
       ALCint attrs[3] = {0};
 
-#ifndef HAVE_OPENAL_FRAMEWORK
       if (is_hrtf_present) {
         attrs[0] = ALC_HRTF_SOFT;
         attrs[1] = audio_want_hrtf.get_value() ? ALC_TRUE : ALC_FALSE;
@@ -168,7 +167,6 @@ OpenALAudioManager() {
       } else {
         attrs[0] = 0; // end of list
       }
-#endif // HAVE_OPENAL_FRAMEWORK
 
       _context = alcCreateContext(_device, attrs);
       alc_audio_errcheck("alcCreateContext(_device, NULL)", _device);

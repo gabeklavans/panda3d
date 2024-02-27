@@ -19,16 +19,9 @@
 #include "movieAudioCursor.h"
 #include "trueClock.h"
 #include "openalAudioManager.h"
-
-// OSX uses the OpenAL framework
-#ifdef HAVE_OPENAL_FRAMEWORK
-  #include <OpenAL/al.h>
-  #include <OpenAL/alc.h>
-#else
-  #include <AL/al.h>
-  #include <AL/alc.h>
-  #include <AL/alext.h>
-#endif
+#include <AL/al.h>
+#include <AL/alc.h>
+#include <AL/alext.h>
 
 class EXPCL_OPENAL_AUDIO OpenALAudioSound final : public AudioSound {
   friend class OpenALAudioManager;
